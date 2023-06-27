@@ -2,8 +2,8 @@
 
 namespace AdminKit\Pages\Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use AdminKit\Pages\Models\Page;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PageFactory extends Factory
 {

@@ -2,9 +2,9 @@
 
 namespace AdminKit\Pages\UI\Filament\Resources\PageResource\Pages;
 
+use AdminKit\Pages\UI\Filament\Resources\PageResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
-use AdminKit\Pages\UI\Filament\Resources\PageResource;
 
 class EditPage extends EditRecord
 {

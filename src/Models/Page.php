@@ -3,9 +3,9 @@
 namespace AdminKit\Pages\Models;
 
 use AdminKit\Core\Abstracts\Models\AbstractModel;
+use AdminKit\Pages\Database\Factories\PageFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\Translatable\HasTranslations;
-use AdminKit\Pages\Database\Factories\PageFactory;
 
 class Page extends AbstractModel
 {

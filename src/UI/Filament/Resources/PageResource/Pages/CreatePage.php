@@ -2,9 +2,9 @@
 
 namespace AdminKit\Pages\UI\Filament\Resources\PageResource\Pages;
 
+use AdminKit\Pages\UI\Filament\Resources\PageResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\CreateRecord;
-use AdminKit\Pages\UI\Filament\Resources\PageResource;
 
 class CreatePage extends CreateRecord
 {

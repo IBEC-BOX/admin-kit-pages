@@ -2,14 +2,14 @@
 
 namespace AdminKit\Pages\UI\Filament\Resources;
 
+use AdminKit\Pages\Models\Page;
+use AdminKit\Pages\UI\Filament\Resources\PageResource\Pages;
 use Filament\Forms;
 use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use AdminKit\Pages\Models\Page;
-use AdminKit\Pages\UI\Filament\Resources\PageResource\Pages;
 
 class PageResource extends Resource
 {
