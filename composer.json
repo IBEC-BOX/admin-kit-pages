@@ -1,17 +1,17 @@
 {
-    "name": ":packagist_name/:package_slug",
-    "description": ":package_description",
+    "name": "ibecsystems/admin-kit-pages",
+    "description": "Pages package for Admin Kit",
     "keywords": [
-        ":github_name",
+        "ibec-box",
         "laravel",
-        ":package_slug"
+        "admin-kit-pages"
     ],
-    "homepage": "https://github.com/:github_name/:package_slug",
+    "homepage": "https://github.com/ibec-box/admin-kit-pages",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Anastas Mironov",
+            "email": "ast@l80.ru",
             "role": "Developer"
         }
     ],
@@ -41,13 +41,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "AdminKit\\Pages\\": "src/",
+            "AdminKit\\Pages\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "AdminKit\\Pages\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -67,10 +67,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "AdminKit\\Pages\\PagesServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "Pages": "AdminKit\\Pages\\Facades\\Pages"
             }
         }
     },

@@ -1,16 +1,16 @@
 <?php
 
-namespace VendorName\Skeleton\UI\Filament\Resources\SingleNameResource\Pages;
+namespace AdminKit\Pages\UI\Filament\Resources\PageResource\Pages;
 
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
-use VendorName\Skeleton\UI\Filament\Resources\SingleNameResource;
+use AdminKit\Pages\UI\Filament\Resources\PageResource;
 
-class ListSingleName extends ListRecords
+class ListPage extends ListRecords
 {
     use ListRecords\Concerns\Translatable;
 
-    protected static string $resource = SingleNameResource::class;
+    protected static string $resource = PageResource::class;
 
     protected function getActions(): array
     {

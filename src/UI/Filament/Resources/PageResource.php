@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\UI\Filament\Resources;
+namespace AdminKit\Pages\UI\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Resources\Concerns\Translatable;
@@ -8,14 +8,14 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use VendorName\Skeleton\Models\SingleName;
-use VendorName\Skeleton\UI\Filament\Resources\SingleNameResource\Pages;
+use AdminKit\Pages\Models\Page;
+use AdminKit\Pages\UI\Filament\Resources\PageResource\Pages;
 
-class SingleNameResource extends Resource
+class PageResource extends Resource
 {
     use Translatable;
 
-    protected static ?string $model = SingleName::class;
+    protected static ?string $model = Page::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-x';
 
@@ -58,9 +58,9 @@ class SingleNameResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListSingleName::route('/'),
-            'create' => Pages\CreateSingleName::route('/create'),
-            'edit' => Pages\EditSingleName::route('/{record}/edit'),
+            'index' => Pages\ListPage::route('/'),
+            'create' => Pages\CreatePage::route('/create'),
+            'edit' => Pages\EditPage::route('/{record}/edit'),
         ];
     }
 

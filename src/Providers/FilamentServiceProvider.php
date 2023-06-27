@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace VendorName\Skeleton\Providers;
+namespace AdminKit\Pages\Providers;
 
 use Filament\PluginServiceProvider;
-use VendorName\Skeleton\UI\Filament\Resources\SingleNameResource;
+use AdminKit\Pages\UI\Filament\Resources\PageResource;
 
 class FilamentServiceProvider extends PluginServiceProvider
 {
-    public static string $name = ':package_slug_without_prefix';
+    public static string $name = 'pages';
 
     protected array $resources = [
-        SingleNameResource::class,
+        PageResource::class,
     ];
 }
