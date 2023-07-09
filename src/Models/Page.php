@@ -16,14 +16,24 @@ class Page extends AbstractModel
 
     protected $fillable = [
         'title',
+        'content',
+        'seo_title',
+        'seo_description',
+        'slug',
+        'position',
+        'site_display',
+        'site_map_index',
+    ];
+
+    public array $translatable = [
+        'title',
+        'content',
+        'seo_title',
+        'seo_description'
     ];
 
     protected $casts = [
         //
-    ];
-
-    protected $translatable = [
-        'title',
     ];
 
     protected static function newFactory(): PageFactory
