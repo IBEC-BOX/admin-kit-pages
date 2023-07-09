@@ -29,7 +29,7 @@ class Page extends AbstractModel
         'title',
         'content',
         'seo_title',
-        'seo_description'
+        'seo_description',
     ];
 
     protected $casts = [

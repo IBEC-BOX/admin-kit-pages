@@ -19,9 +19,13 @@ class PageResource extends Resource
     use Translatable;
 
     protected static ?string $model = Page::class;
+
     protected static ?string $modelLabel = 'Страницу';
+
     protected static ?string $pluralModelLabel = 'Страницы';
+
     protected static ?string $navigationGroup = 'Страницы';
+
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-list';
 
     public static function form(Form $form): Form

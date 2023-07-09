@@ -3,9 +3,9 @@
 namespace AdminKit\Pages;
 
 use AdminKit\Pages\Commands\PagesCommand;
+use AdminKit\Pages\Models\Page;
 use AdminKit\Pages\Providers\FilamentServiceProvider;
 use AdminKit\Pages\Providers\RouteServiceProvider;
-use AdminKit\Pages\Models\Page;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use RyanChandler\FilamentNavigation\Facades\FilamentNavigation;
