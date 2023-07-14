@@ -2,9 +2,10 @@
 
 namespace AdminKit\Pages\UI\Filament\Resources;
 
+use AdminKit\Core\Forms\Components\TranslatableTabs;
 use AdminKit\Pages\Models\Page;
 use AdminKit\Pages\UI\Filament\Resources\PageResource\Pages;
-use AdminKit\Core\Forms\Components\TranslatableTabs;
+use AdminKit\SEO\Forms\Components\SEOComponent;
 use Filament\Forms;
 use Filament\Forms\Components\Tabs;
 use Filament\Resources\Form;
@@ -14,7 +15,6 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
-use AdminKit\SEO\Forms\Components\SEOComponent;
 
 class PageResource extends Resource
 {
