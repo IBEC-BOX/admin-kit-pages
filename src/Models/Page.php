@@ -5,20 +5,22 @@ namespace AdminKit\Pages\Models;
 use AdminKit\Core\Abstracts\Models\AbstractModel;
 use AdminKit\Pages\Database\Factories\PageFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Translatable\HasTranslations;
+use AdminKit\SEO\Traits\HasSEO;
 
 class Page extends AbstractModel
 {
     use HasFactory;
     use HasTranslations;
+    use HasSEO;
+    use SoftDeletes;
 
     protected $table = 'admin_kit_pages';
 
     protected $fillable = [
         'title',
         'content',
-        'seo_title',
-        'seo_description',
         'slug',
         'position',
         'site_display',
@@ -28,8 +30,6 @@ class Page extends AbstractModel
     public array $translatable = [
         'title',
         'content',
-        'seo_title',
-        'seo_description',
     ];
 
     protected $casts = [

@@ -10,11 +10,9 @@ return new class extends Migration
     {
         Schema::create('admin_kit_pages', function (Blueprint $table) {
             $table->id();
-            $table->json('title');
-            $table->json('content');
-            $table->json('page_title')->nullable();
-            $table->json('seo_title')->nullable();
-            $table->json('seo_description')->nullable();
+            $table->jsonb('title');
+            $table->jsonb('content');
+            $table->jsonb('page_title')->nullable();
             $table->string('slug');
             $table->boolean('site_display')->default(1);
             $table->boolean('site_map_index')->default(1);

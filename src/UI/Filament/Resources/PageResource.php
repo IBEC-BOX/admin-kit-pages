@@ -4,8 +4,9 @@ namespace AdminKit\Pages\UI\Filament\Resources;
 
 use AdminKit\Pages\Models\Page;
 use AdminKit\Pages\UI\Filament\Resources\PageResource\Pages;
+use AdminKit\Core\Forms\Components\TranslatableTabs;
 use Filament\Forms;
-use Filament\Resources\Concerns\Translatable;
+use Filament\Forms\Components\Tabs;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -13,11 +14,10 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
+use AdminKit\SEO\Forms\Components\SEOComponent;
 
 class PageResource extends Resource
 {
-    use Translatable;
-
     protected static ?string $model = Page::class;
 
     protected static ?string $modelLabel = 'Страницу';
@@ -32,12 +32,9 @@ class PageResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('page_title')
-                    ->label('Название страницы')
-                    ->required(),
                 Forms\Components\Card::make([
-                    Forms\Components\TextInput::make('title')
-                        ->label('Название')
+                    Forms\Components\TextInput::make('page_title')
+                        ->label('Название страницы')
                         ->required()
                         ->lazy()
                         ->afterStateUpdated(
@@ -47,18 +44,21 @@ class PageResource extends Resource
                                 }
                             }
                         ),
-
                     Forms\Components\TextInput::make('slug')
                         ->disabled()
                         ->required()
                         ->unique(Page::class, 'slug', ignoreRecord: true),
+                ])->columns(),
+
+                TranslatableTabs::make(fn ($locale) => Tabs\Tab::make($locale)->schema([
+                    Forms\Components\TextInput::make('title')
+                        ->label('Название')
+                        ->required(),
 
                     Forms\Components\RichEditor::make('content')->label('Контент')->required()->columnSpan(2),
-                ])->columns(),
-                Forms\Components\TextInput::make('seo_title'),
-                Forms\Components\TextInput::make('seo_description'),
-                Forms\Components\Checkbox::make('site_display'),
-                Forms\Components\Checkbox::make('site_map_index'),
+                ]))->columnSpan(2),
+
+                SEOComponent::make(),
             ]);
     }
 
