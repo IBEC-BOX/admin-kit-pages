@@ -105,9 +105,4 @@ class PageResource extends Resource
                 SoftDeletingScope::class,
             ]);
     }
-
-    public static function getTranslatableLocales(): array
-    {
-        return config('admin-kit.locales');
-    }
 }

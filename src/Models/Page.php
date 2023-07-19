@@ -24,7 +24,6 @@ class Page extends AbstractModel
         'slug',
         'position',
         'site_display',
-        'site_map_index',
     ];
 
     public array $translatable = [
