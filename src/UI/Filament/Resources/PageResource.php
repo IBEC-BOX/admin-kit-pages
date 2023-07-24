@@ -51,11 +51,11 @@ class PageResource extends Resource
                 ])->columns(),
 
                 TranslatableTabs::make(fn ($locale) => Tabs\Tab::make($locale)->schema([
-                    Forms\Components\TextInput::make('title')
+                    Forms\Components\TextInput::make('title.'.$locale)
                         ->label('Название')
                         ->required(),
 
-                    Forms\Components\RichEditor::make('content')->label('Контент')->required()->columnSpan(2),
+                    Forms\Components\RichEditor::make('content.'.$locale)->label('Контент')->required()->columnSpan(2),
                 ]))->columnSpan(2),
 
                 SEOComponent::make(),
@@ -66,7 +66,7 @@ class PageResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')->label('Название')->searchable(),
+                Tables\Columns\TextColumn::make('page_title')->label('Название')->searchable(),
             ])
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
