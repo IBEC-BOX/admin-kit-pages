@@ -47,7 +47,7 @@ class PagesServiceProvider extends PackageServiceProvider
 
             TextInput::make('slug')
                 ->required()
-                ->unique(Page::class, 'slug', ignoreRecord: true),
+                ->label('slug'),
         ]);
     }
 }

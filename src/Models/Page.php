@@ -19,6 +19,7 @@ class Page extends AbstractModel
     protected $table = 'admin_kit_pages';
 
     protected $fillable = [
+        'page_title',
         'title',
         'content',
         'slug',
