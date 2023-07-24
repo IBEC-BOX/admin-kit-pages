@@ -51,11 +51,11 @@ class PageResource extends Resource
                 ])->columns(),
 
                 TranslatableTabs::make(fn ($locale) => Tabs\Tab::make($locale)->schema([
-                    Forms\Components\TextInput::make('title.' . $locale)
+                    Forms\Components\TextInput::make('title.'.$locale)
                         ->label('Название')
                         ->required(),
 
-                    Forms\Components\RichEditor::make('content.'. $locale)->label('Контент')->required()->columnSpan(2),
+                    Forms\Components\RichEditor::make('content.'.$locale)->label('Контент')->required()->columnSpan(2),
                 ]))->columnSpan(2),
 
                 SEOComponent::make(),
