@@ -2,9 +2,9 @@
 
 namespace AdminKit\Pages;
 
-use Spatie\LaravelPackageTools\Package;
 use AdminKit\Pages\Commands\PagesCommand;
 use AdminKit\Pages\Providers\RouteServiceProvider;
+use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class PagesServiceProvider extends PackageServiceProvider

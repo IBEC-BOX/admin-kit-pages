@@ -12,8 +12,8 @@ use Spatie\Translatable\HasTranslations;
 class Page extends AbstractModel
 {
     use HasFactory;
-    use HasTranslations;
     use HasSEO;
+    use HasTranslations;
     use SoftDeletes;
 
     protected $table = 'admin_kit_pages';
