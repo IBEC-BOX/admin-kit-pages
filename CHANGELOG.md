@@ -2,6 +2,10 @@
 
 All notable changes to `admin-kit-pages` will be documented in this file.
 
+## v3.0.0 - 2024-02-12
+
+Filament v3 support!
+
 ## v2.0.2 - 2023-07-24
 
 - fix: correct save with locales
