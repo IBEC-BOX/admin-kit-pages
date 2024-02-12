@@ -8,9 +8,7 @@ use AdminKit\Pages\UI\Filament\Resources\PageResource\Pages;
 use AdminKit\SEO\Forms\Components\SEOComponent;
 use Filament\Forms;
 use Filament\Forms\Components\Tabs;
-use Filament\Resources\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -26,13 +24,13 @@ class PageResource extends Resource
 
     protected static ?string $navigationGroup = 'Страницы';
 
-    protected static ?string $navigationIcon = 'heroicon-o-clipboard-list';
+    protected static ?string $navigationIcon = 'heroicon-o-document-duplicate';
 
-    public static function form(Form $form): Form
+    public static function form(Forms\Form $form): Forms\Form
     {
         return $form
             ->schema([
-                Forms\Components\Card::make([
+                Forms\Components\Section::make([
                     Forms\Components\TextInput::make('page_title')
                         ->label('Название страницы')
                         ->required()
@@ -45,7 +43,7 @@ class PageResource extends Resource
                             }
                         ),
                     Forms\Components\TextInput::make('slug')
-                        ->disabled()
+                        ->readOnly()
                         ->required()
                         ->unique(Page::class, 'slug', ignoreRecord: true),
                 ])->columns(),
@@ -62,7 +60,7 @@ class PageResource extends Resource
             ]);
     }
 
-    public static function table(Table $table): Table
+    public static function table(Tables\Table $table): Tables\Table
     {
         return $table
             ->columns([

@@ -44,8 +44,21 @@ php artisan vendor:publish --tag="admin-kit-pages-views"
 ## Usage
 
 ```php
-$pages = new AdminKit\Pages();
-echo $pages->echoPhrase('Hello, AdminKit!');
+class AdminPanelProvider extends PanelProvider
+{
+    public function panel(Panel $panel): Panel
+    {
+        return $panel
+            ->default()
+            ->id('admin')
+            ->path('admin')
+            ...
+            ->plugins([
+                ...
+                \AdminKit\Pages\FilamentPlugin::make(),
+            ]);
+    }
+}
 ```
 
 ## Testing
